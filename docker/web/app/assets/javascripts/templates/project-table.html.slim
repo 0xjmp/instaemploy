@@ -1,0 +1,22 @@
+md-list(ng-show="projects")
+  md-item(ng-repeat="project in projects")
+    md-item-content
+      .md-tile-left(layout="row" layout-align="center center")
+        md-checkbox(aria-label="is_accepted" ng-disabled="project.is_accepted")
+      .md-tile-content(layout="column" layout-align="space-around start")
+        a(ng-href="projects/{{project.id}}")
+          | {{project.title}}
+        p
+          | {{project.description}}
+        p
+          | {{project.due_date | date: 'medium'}}
+      .md-tile-right(layout="column" layout-align="space-between end")
+        div(layout="column" layout-align="start end")
+          p
+            | {{project.cash_payout}}
+          p
+            | Created by
+            a(ng-href="users/{{project.user.id}}")  {{project.user.full_name}}
+          p
+            | {{project.xp_payout}} XP JOB
+h4(ng-show="projects && projects.length == 0") No projects found

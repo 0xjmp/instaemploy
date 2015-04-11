@@ -1,0 +1,5 @@
+redis: redis-server
+sidekiq: bundle exec sidekiq -C config/sidekiq.yml
+memcached: memcached
+web: bundle exec rails server thin
+logger: tail -f log/development.log

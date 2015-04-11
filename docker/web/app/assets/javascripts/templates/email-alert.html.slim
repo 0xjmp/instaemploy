@@ -1,0 +1,12 @@
+.container
+  md-dialog(aria-label="Create email alert")
+    md-content
+      form
+        div(layout layout-sm="column")
+          md-input-container
+            label Email
+            input(type="email" ng-model="alert.email")
+    .md-actions
+      div(layout="row" layout-align="space-between center" layout-sm="column")
+        md-button.md-primary.md-raised(ng-click="createEmailAlert(alert)") Create
+        md-button.md-hue-2(ng-click="hideDialog()") Cancel

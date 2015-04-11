@@ -1,0 +1,4 @@
+md-toolbar
+  .container
+    form.skill(layout="row" layout-align="start center")
+      md-button.skill(ng-repeat="skill in skills" ng-click="fetchSkill(skill.name)") {{skill.name | capitalize}}

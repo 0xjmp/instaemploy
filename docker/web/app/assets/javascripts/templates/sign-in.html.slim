@@ -1,0 +1,15 @@
+h1 Login
+.container.user-form(layout="column")
+  omniauth-btns
+  form(layout="column")
+    .input-group(layout="column")
+      label Email
+      input(type="email" autofocus="true" ng-model="user.email" placeholder="Email")
+    .input-group(layout="column")
+      label Password
+      input(type="password" autocomplete="off" ng-model="user.password" placeholder="Password")
+    .input-group(layout="row")
+      input(type="checkbox" ng-model="user.remember_me")
+      label#remember-me Remember me
+    .input-group
+      input(type="submit" value="Sign In" ng-click="login(user)")

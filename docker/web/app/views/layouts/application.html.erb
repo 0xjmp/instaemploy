@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Instaemploy | Get a job instantly</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <meta name="google-site-verification" content="g9puxiv-dSWz4cl_qNUm4P9LpgPtLHHceTG7gJLPaL4" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    :application, media: :all, 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag :application, media: :all, 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <base href="/">
+  </head>
+  <body layout="column" ng-app="instaemploy">
+    <div ng-include src="'side-menu.html'"></div>
+    <nav-header></nav-header>
+    <div ng-view></div>
+    <div ng-include src="'footer.html'"></div>
+  </body>
+</html>

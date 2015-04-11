@@ -1,0 +1,30 @@
+div(layout="row" flex)
+  div(layout="column" ng-init="fetchUser()")
+    .container(layout="column")
+      div(layout="row" layout-align="space-between end")
+        div(layout="column" layout-align="start center")
+          img.avatar(ng-src="{{user.avatar.avatar.url}}" ng-if="user.avatar.avatar.url")
+          h2
+            | {{user.username | capitalize}}
+          h4
+            | {{user.full_name | capitalize}}
+            br
+            span(ng-if="user.company")
+              | {{user.company | capitalize}},
+            | {{user.authorization | capitalize}}
+            br
+          | {{user.location | capitalize}}
+        div(layout="column")
+          h3 Lvl 31
+          p 1258/1400
+    md-progress-linear(md-mode="determinate" value="75")
+    skill-grid(skills="user.skills")
+    div(layout="column")
+      #project-header(layout="column")
+        .container(layout="column")
+          #header(layout="row" layout-align="space-between center")
+            h3 Projects
+            search(scope="user.projects")
+          md-tabs(md-selected="projectIndex")
+            md-tab(ng-repeat="tab in tabs" md-on-select="changeProjectTab(tab)") {{tab}}
+          project-table(projects="user.projects[currentTab]" nouser="true" tabs="tabs")

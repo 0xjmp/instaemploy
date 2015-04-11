@@ -1,0 +1,91 @@
+source 'https://rubygems.org'
+
+ruby '2.1.5'
+
+######### FRONT-END GEMS ##########
+gem 'uglifier'
+gem 'therubyracer'
+gem 'slim-rails'
+gem 'bower-rails'
+gem 'less-rails'
+gem 'angular-rails-templates'
+gem 'font-awesome-rails'
+######### END FRONT-END GEMS #########
+
+gem 'rails', '4.2.0'
+gem 'jbuilder'
+gem 'sdoc',          group: :doc # bundle exec rake doc:rails generates the API under doc/api.
+gem 'devise'
+gem 'unicorn'
+gem 'thin'
+gem 'resque'
+gem 'passenger'
+gem 'sidekiq'
+gem 'fog', require: 'fog/aws/storage'
+gem 'carrierwave'
+gem 'carrierwave_backgrounder'
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'omniauth-bitbucket'
+gem 'mini_magick'
+gem 'acts-as-taggable-on'
+gem 'albino'
+gem 'nokogiri'
+gem 'public_activity'
+gem 'angular_rails_csrf'
+gem 'merit'
+gem 'whenever', require: false
+gem 'git'
+gem 'aws-sdk'
+gem 'zip'
+gem 'rubyzip'
+gem 'stripe'
+
+group :development do
+	gem 'foreman'
+	gem 'binding_of_caller'
+	gem 'better_errors'
+	gem 'guard'
+	gem 'guard-teaspoon'
+	gem 'guard-rspec'
+	gem 'guard-bundler'
+	gem 'guard-unicorn'
+	gem 'guard-livereload'
+	gem 'sqlite3'
+	gem 'mailcatcher'
+end
+
+group :test do
+	gem 'rspec-rails'
+	gem 'factory_girl_rails'
+	gem 'simplecov'
+	gem 'awesome_print'
+	gem 'database_cleaner'
+	gem 'compass'
+	gem 'capybara'
+	gem 'poltergeist'
+	gem 'rspec-sidekiq'
+end
+
+group :development, :test do
+	gem 'pry'
+	gem 'pry-remote'
+	gem 'pry-stack_explorer'
+	gem 'pry-byebug'
+	gem 'teaspoon'
+	gem 'selenium-webdriver'
+	gem 'capybara-angular'
+	gem 'launchy'
+end
+
+group :staging, :production do
+	gem 'pg'
+end
+
+group :development, :test, :staging do
+	gem 'dotenv-rails'
+end
+
+group :production do
+	gem 'rails_12factor'
+end

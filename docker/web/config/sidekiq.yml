@@ -1,0 +1,10 @@
+:concurrency: 100
+staging:
+  :concurrency: 10
+production:
+  :concurrency: 100
+:queues:
+  - default
+  - devise
+  - git
+  - [carrierwave, 2]

@@ -1,0 +1,18 @@
+#welcome
+  .container
+    h1 Get to work now.
+    h1 Build experience and find new challenges.
+    form
+      .input-group
+        input.form-control(ng-model="search.skill_list" placeholder="What industry are you interested in?")
+        span.input-group-btn
+          button.btn.btn-default(ng-click="query(search.skill_list)" ng-if="!loading") Go!
+          button.btn.btn-default(ng-if="loading")
+            md-progress-circular.progress.md-accent(md-mode="indeterminate")
+    project-table(projects="projects" ng-if="projects.length > 0")
+    div(ng-if="projects.length == 0" layout="row" layout-align="space-around center")
+      div.no-projects
+        h3.title We didn't find any projects in your industry.
+        p.subtitle Try a different industry or we can notify you when projects related to your industry become available.
+        div(layout="row" layout-align="space-around center" flex)
+          md-button.md-primary.md-raised(ng-click="showEmailAlertDialog(search.skill_list)") Email me!

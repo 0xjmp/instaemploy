@@ -1,0 +1,29 @@
+.container
+  md-dialog(aria-label="Edit User")
+    md-subheader.md-sticky-no-effect Edit User
+    md-content
+      form(enctype="multipart/form-data")
+        md-input-container(flex)
+          label Full Name
+          input(type="text" ng-model="user.full_name" value="user.full_name" required)
+        md-input-container(flex)
+          label Username
+          input(type="text" ng-model="user.username" required)
+        md-input-container(flex)
+          label Email
+          input(type="email" ng-model="user.email" required)
+        div(layout="row" flex)
+          md-input-container(flex)
+            label Location
+            input(type="text" ng-model="user.location")
+          md-input-container(flex)
+            label Avatar
+            input(type="file" ng-model="user.avatar" file-upload-multiple)
+        div
+          md-input-container.skills
+            label What industry do you work in?
+            input(ng-model="user.skill_list")
+          .help Seperate multiple with commas
+    .md-actions(layout="row")
+      md-button.md-primary.md-raised(ng-click="updateUser(user)") Save
+      md-button.md-hue-2.cancel(ng-click="hideDialog()") Cancel

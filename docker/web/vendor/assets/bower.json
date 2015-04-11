@@ -1,0 +1,27 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "angular": "latest",
+    "angular-animate": "latest",
+    "angular-cookies": "latest",
+    "angular-resource": "latest",
+    "angular-route": "latest",
+    "angular-sanitize": "latest",
+    "angular-touch": "latest",
+    "angular-mocks": "latest",
+    "bootstrap": "latest",
+    "jquery": "latest",
+    "jquery-ujs": "latest",
+    "jquery-cookie": "latest",
+    "flexbox.less": "latest",
+    "highcharts": "latest",
+    "angular-loading-bar": "latest",
+    "angular-markdown-directive": "latest",
+    "angular-devise": "latest",
+    "underscore": "latest",
+    "restangular": "latest",
+    "angular-aria": "latest",
+    "angular-material": "latest",
+    "ng-file-upload": "latest"
+  }
+}

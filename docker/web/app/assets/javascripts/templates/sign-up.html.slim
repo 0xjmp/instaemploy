@@ -1,0 +1,31 @@
+h1 Register
+.container
+  omniauth-btns
+  form.user-form(layout="column")
+    .form-group
+      span.pull-left Full Name
+      input.form-control(type="text" placeholder="Full Name" ng-model="user.full_name" autofocus="true")
+    .form-group(ng-class="{'has-error': user.email.$invalid}")
+      span.pull-left Email
+      input.form-control(type="email" name="email" placeholder="Email" ng-model="user.email" required)
+      span.help-inline(ng-show="user.email.$error.required")
+        | Required
+    .form-group
+      span.pull-left Password
+      input.form-control(type="password" autocomplete="off" placeholder="Password" ng-model="user.password")
+    .form-group
+      span.pull-left Password Confirmation
+      input.form-control(type="password" autocomplete="off" placeholder="Confirm Password" ng-model="user.password_confirmation")
+    .form-group(ng-class="{'has-error': user.username.$invalid}")
+      span.pull-left Username
+      input.form-control(type="text" name="username" placeholder="Username" ng-model="user.username" required)
+      span.help-inline(ng-show="user.username.$error.required")
+        | Required
+    .form-group
+      span.pull-left Location
+      input.form-control(type="text" placeholder="Location" ng-model="user.location")
+    .form-group(layout="column")
+      span Avatar
+      input.form-control(type="file" ng-model="user.avatar")
+    .form-group
+      input.btn.btn-primary(type="submit" value="Register" ng-click="registerUser(user)")

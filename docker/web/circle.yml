@@ -1,0 +1,23 @@
+machine:
+  python:
+    version: 2.7.3
+  ruby:
+    version: 2.1.5
+
+dependencies:
+  pre:
+    - pip install awscli
+  post:
+    - bundle exec rake assets:clean
+    - bundle exec rake assets:precompile
+
+test:
+  override:
+    - rspec spec
+    - bundle exec rake teaspoon
+
+deployment:
+  master:
+    branch: master
+    commands:
+      - /bin/bash ./deploy.sh

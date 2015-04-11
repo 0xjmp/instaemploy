@@ -1,0 +1,32 @@
+md-toolbar#navigation(ng-init="fetchUser()")
+  .container
+    div(layout="row" layout-align="space-between center")
+      div(layout="row" layout-align="space-around center")
+        md-button(ng-if="user" ng-click="toggleSideMenu()" aria-label="bars")
+          i.fa.fa-fw.fa-bars
+        a#logo.navbar-brand(ng-href="/") IE
+      div(ng-if="!user")
+        md-button.md-primary.md-raised.md-hue-2.nav-auth-btn(data-icon="button" ng-href="/users/sign_in") Login
+        span or
+        md-button.md-primary.md-raised.md-hue-2.nav-auth-btn(data-icon="button" ng-href="/users/sign_up") Register
+      ul(ng-if="user" layout="row" layout-align="space-around center")
+        .dropdown
+          md-button.dropdown-toggle(data-toggle="dropdown" aria-label="new")
+            i.fa.fa-fw.fa-inverse.fa-plus
+          ul.dropdown-menu
+            li(ng-if="user")
+              a(ng-click="showProjectDialog()") Create Project
+        .dropdown
+          md-button.dropdown-toggle(data-toggle="dropdown" aria-label="messages")
+            i.fa.fa-fw.fa-paper-plane
+        .dropdown
+          md-button#avatar.dropdown-toggle(data-toggle="dropdown" layout="row" layout-align="space-between center")
+            img(ng-src="{{user.avatar.avatar.thumb.url}}" ng-if="user.avatar.avatar.thumb.url")
+            p
+              | {{user.username}}
+            span.caret
+          ul.dropdown-menu
+            li
+              a(ng-click="showEditUserDialog()") Edit Profile
+            li
+              a(ng-click="logout()") Log Out

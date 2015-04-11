@@ -1,0 +1,1 @@
+json.(bid, :id, :user_id, :project_id, :code, :price, :state)

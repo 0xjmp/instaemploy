@@ -1,0 +1,7 @@
+h1 Explore
+.container(layout="column" ng-init="explore()")
+  .input-group
+    input.form-control type="text" placeholder="Search for anything..." ng-model="text"
+    span.input-group-btn
+      input.input-addon.btn.btn-primary type="submit" value="Search" ng-click="query(text)"
+  project-table(projects="projects")

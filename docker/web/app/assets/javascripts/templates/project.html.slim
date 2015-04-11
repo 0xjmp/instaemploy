@@ -1,0 +1,30 @@
+.container
+  div(layout="row" layout-align="space-between start")
+    h1.big
+      | {{project.title}}
+    div
+      div(layout="row" layout-align="end center")
+        img.avatar(ng-src="{{project.user.avatar.avatar.thumb.url}}" ng-if="project.user.avatar.avatar.thumb.url")
+        h4
+          | {{project.user.full_name | capitalize}}
+      div(layout="column")
+        p
+          | Created: {{project.created_at | datetime}}
+        p
+          | Due: {{project.due_date | datetime}}
+skill-grid(skills="project.skills")
+.container(layout="column")
+  div(layout="row" layout-align="space-between center")
+    accepted(accepted="project.is_accepted" disabled="project.user == user")
+    ul.actions(layout="row" layout-align="end center" ng-switch="project.state" ng-if="project.user.id != user.id")
+      li(ng-show="project.user != user")
+        md-button.md-raised.md-primary(ng-click="toggleFollow()" ng-class="{'md-primary': !project.following, 'md-accent': project.following}") {{ project.following ? 'Unfollow' : 'Follow' }}
+      li(ng-switch-when="incomplete")
+        md-button.md-raised.md-primary(ng-click="nextState()") Start
+      li(ng-switch-when="started" layout="row")
+        md-button.md-raised.md-warn(ng-click="cancelState()") Cancel
+        md-button-md-raised.md-primary(ng-click="nextState()") Finish
+      li(ng-switch-when="completed")
+        md-button(ng-disabled="true") Finished
+  md-content.md-padding
+    | {{project.description}}

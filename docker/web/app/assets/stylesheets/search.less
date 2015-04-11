@@ -1,0 +1,54 @@
+#search {
+  width: 26px;
+  height: 26px;
+  border-radius: 13px;
+
+  button {
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: black;
+    padding-top: 2.5px;
+    padding-left: 4px;
+    display: block;
+    border-radius: 13px;
+
+    &:hover {
+      background: white;
+      -webkit-transition: background 300ms linear;
+      -moz-transition: background 300ms linear;
+      -o-transition: background 300ms linear;
+      -ms-transition: background 300ms linear;
+      transition: background 300ms linear;
+    }
+  }
+
+  input {
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    background: none;
+    opacity: 0;
+    border: none;
+    right: 145px;
+  }
+
+  input.active {
+    width: 275px;
+    background: white;
+    opacity: 1;
+    -webkit-transition: width 200ms linear, background 200ms, right 200ms, opacity 200ms;
+    -moz-transition: width 200ms linear, background 200ms, right 200ms, opacity 200ms;
+    -o-transition: width 200ms linear, background 200ms, right 200ms, opacity 200ms;
+    -ms-transition: width 200ms linear, background 200ms, right 200ms, opacity 200ms;
+    transition: width 200ms linear, background 200ms, right 200ms, opacity 200ms;
+  }
+
+  i {
+    padding-left: 2px;
+  }
+
+  .stack {
+    position: absolute;
+  }
+}

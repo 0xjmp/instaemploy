@@ -1,0 +1,24 @@
+.container
+  md-dialog(aria-label="New Project")
+    md-subheader.md-sticky-no-effect New Project
+    md-content
+      form(name="projectForm")
+        md-input-container(flex)
+          label Name
+          input(required name="name" ng-model="project.title")
+        md-input-container(flex)
+          label Git URL
+          input(required name="url" ng-model="project.repo_url")
+        md-input-container(flex)
+          label Description (Optional)
+          textarea(ng-model="project.description" columns="1" md-maxlength="100")
+        div(layout layout-sm="column")
+          md-input-container(flex)
+            label Due date
+            input(required name="dueDate" type="date" ng-model="project.due_date")
+          md-input-container(flex)
+            label What industries apply to your project?
+            input(required name="skills" ng-model="project.skill_list")
+    .md-actions(layout="row")
+      md-button.md-primary.md-raised(ng-click="saveProject(project)") Save
+      md-button.md-hue-2.cancel(ng-click="hideProjectForm()") Cancel

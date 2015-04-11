@@ -1,0 +1,18 @@
+#side-menu(ng-class="{show : sideMenuShowing}")
+  ul(ng-if="user")
+    li
+      a(ng-click="selectMenuItem(0)" ng-href="/home")
+        i.fa.fa-fw.fa-home
+        | Dashboard
+    li
+      a(ng-click="selectMenuItem(1)" ng-href="/explore")
+        i.fa.fa-fw.fa-search
+        | Explore
+    li
+      a(ng-click="selectMenuItem(2)" ng-href="/users")
+        i.fa.fa-fw.fa-cogs
+        | Profile
+    li
+      a(ng-click="selectMenuItem(3)")
+        i.fa.fa-fw.fa-sign-out
+        | Sign Out

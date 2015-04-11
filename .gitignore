@@ -1,0 +1,4 @@
+.elasticbeanstalk
+.vagrant
+.env
+.env.*
